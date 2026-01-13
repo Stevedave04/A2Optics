@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A²OPTICS | Curated European Eyewear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              meridian: {
+                offWhite: '#FAFAF8',
+                warmBlack: '#1A1A1A',
+                charcoal: '#2D2D2D',
+                gold: '#B8A078',
+                sage: '#8B9A7D',
+                burgundy: '#5C3D3D',
+                lightGrey: '#E8E6E3',
+                mediumGrey: '#9A9A9A',
+                borderGrey: '#D4D2CF',
+              }
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', 'serif'],
+              body: ['"DM Sans"', 'sans-serif'],
+              accent: ['"Libre Baskerville"', 'serif'],
+            },
+            letterSpacing: {
+              widest: '.2em',
+              extrawide: '.3em',
+            },
+            keyframes: {
+              'fade-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
+            animation: {
+              'fade-up': 'fade-up 1s ease-out forwards',
+              'fade-up-delay': 'fade-up 1s ease-out 0.4s forwards',
+              'fade-up-delay-more': 'fade-up 1s ease-out 0.8s forwards',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FAFAF8;
+        color: #1A1A1A;
+        font-family: 'DM Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-display { font-family: 'Cormorant Garamond', serif; }
+      .font-accent { font-family: 'Libre Baskerville', serif; }
+      
+      /* Smooth transitions for luxury feel */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Ensure initial state for hero animations */
+      .animate-fade-up, 
+      .animate-fade-up-delay, 
+      .animate-fade-up-delay-more {
+        opacity: 0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
