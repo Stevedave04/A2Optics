@@ -17,10 +17,10 @@ const Hero: React.FC = () => {
           loop 
           playsInline
           className="w-full h-full object-cover opacity-70 transition-opacity duration-1000"
-          poster="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1920&auto=format&fit=crop"
+          poster="https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=1920&auto=format&fit=crop"
         >
-          {/* Using a stable luxury texture video source */}
-          <source src="https://player.vimeo.com/external/494451559.hd.mp4?s=272f23236e7616110f6064f2203e05a5a6797277&profile_id=175" type="video/mp4" />
+          {/* Using a robust Pexels luxury eyewear video source */}
+          <source src="https://videos.pexels.com/video-files/5267023/5267023-uhd_2560_1440_30fps.mp4" type="video/mp4" />
           {/* Fallback for video - Stunning detail of high-end frames */}
           <img 
             src="https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=1920&auto=format&fit=crop" 

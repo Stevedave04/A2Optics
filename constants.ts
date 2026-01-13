@@ -26,7 +26,7 @@ export const BRANDS: Brand[] = [
     tagline: 'Sustainable eyewear from natural materials',
     description: 'Award-winning Austrian craftsmanship using wood, stone, and plant-based materials. Rolf proves that sustainability and luxury are not mutually exclusive.',
     catalogueLink: 'https://www.rolf-spectacles.com/en/',
-    imageUrl: 'https://images.unsplash.com/photo-1508243529287-e21914733111?q=80&w=800&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1516714819001-8ee7a13b71d7?q=80&w=800&auto=format&fit=crop',
     keywords: ['Sustainable', 'Natural', 'Award-winning']
   }
 ];
