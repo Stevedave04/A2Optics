@@ -6,13 +6,15 @@ interface ParallaxImageProps {
   alt: string;
   className?: string;
   speed?: number; // 0 to 1, where 0.1 is subtle
+  onError?: () => void;
 }
 
 const ParallaxImage: React.FC<ParallaxImageProps> = ({ 
   src, 
   alt, 
   className = "", 
-  speed = 0.15 
+  speed = 0.15,
+  onError
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
@@ -40,7 +42,8 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
       <img 
         src={src} 
         alt={alt} 
-        className="absolute inset-0 w-full h-[120%] object-cover transition-transform duration-100 ease-out grayscale"
+        onError={onError}
+        className="absolute inset-0 w-full h-[120%] object-cover transition-transform duration-100 ease-out"
         style={{ 
           transform: `translateY(${offset * -0.5}px)`,
           top: '-10%' 

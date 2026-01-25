@@ -1,13 +1,50 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Section from '../components/Section';
 import ParallaxImage from '../components/ParallaxImage';
 import { POSTS } from '../constants';
+import { Post } from '../types';
 import { ArrowRight } from 'lucide-react';
+
+const eyewearFallbacks = [
+  "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=800&auto=format&fit=crop"
+];
+
+const BlogGridItem: React.FC<{ post: Post; index: number }> = ({ post, index }) => {
+  const [imgSrc, setImgSrc] = useState(post.imageUrl || eyewearFallbacks[index % eyewearFallbacks.length]);
+  const fallback = eyewearFallbacks[index % eyewearFallbacks.length];
+
+  return (
+    <div className="group cursor-pointer">
+      <div className="aspect-[16/9] overflow-hidden mb-8 bg-meridian-lightGrey relative">
+        <img 
+          src={imgSrc} 
+          alt={post.title} 
+          onError={() => setImgSrc(fallback)}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="space-y-4">
+        <span className="text-[10px] tracking-extrawide uppercase font-medium text-meridian-gold">{post.category}</span>
+        <h3 className="font-display text-2xl font-light leading-tight group-hover:text-meridian-gold transition-colors">{post.title}</h3>
+        <p className="text-sm text-meridian-charcoal font-light line-clamp-2 leading-relaxed">
+          {post.excerpt}
+        </p>
+        <div className="text-[10px] tracking-widest uppercase text-meridian-mediumGrey mt-4">
+          {post.date} • {post.readTime}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Blog: React.FC = () => {
   const featuredPost = POSTS[0];
   const gridPosts = POSTS.slice(1);
+  
+  const [featuredImgSrc, setFeaturedImgSrc] = useState(featuredPost.imageUrl);
 
   return (
     <div className="pt-24 lg:pt-32">
@@ -24,12 +61,16 @@ const Blog: React.FC = () => {
       {/* Featured Post */}
       <section className="bg-meridian-offWhite">
         <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
-          <ParallaxImage 
-            src={featuredPost.imageUrl} 
-            alt={featuredPost.title} 
-            className="w-full lg:w-3/5 h-[400px] lg:h-[600px]"
-            speed={0.1}
-          />
+          <div className="w-full lg:w-3/5 h-[400px] lg:h-[600px] relative overflow-hidden">
+            {/* ParallaxImage internally uses an img, but we manage the src here to handle the error state */}
+            <ParallaxImage 
+              src={featuredImgSrc} 
+              alt={featuredPost.title} 
+              className="w-full h-full"
+              speed={0.1}
+              onError={() => setFeaturedImgSrc(eyewearFallbacks[0])}
+            />
+          </div>
           <div className="w-full lg:w-2/5 p-10 lg:p-20 space-y-8">
             <span className="text-[10px] tracking-extrawide uppercase font-medium text-meridian-gold">{featuredPost.category}</span>
             <h2 className="font-display text-3xl md:text-4xl font-light leading-tight">{featuredPost.title}</h2>
@@ -52,26 +93,9 @@ const Blog: React.FC = () => {
       {/* Grid */}
       <Section id="blog-grid">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-20">
+          {/* We repeat the sample posts to populate the grid for visual impact */}
           {[...gridPosts, ...gridPosts, ...gridPosts].map((post, idx) => (
-            <div key={idx} className="group cursor-pointer">
-              <div className="aspect-[16/9] overflow-hidden mb-8 bg-meridian-lightGrey relative">
-                <img 
-                  src={`https://picsum.photos/seed/post-${idx}/800/450`} 
-                  alt={post.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="space-y-4">
-                <span className="text-[10px] tracking-extrawide uppercase font-medium text-meridian-gold">{post.category}</span>
-                <h3 className="font-display text-2xl font-light leading-tight group-hover:text-meridian-gold transition-colors">{post.title}</h3>
-                <p className="text-sm text-meridian-charcoal font-light line-clamp-2 leading-relaxed">
-                  {post.excerpt}
-                </p>
-                <div className="text-[10px] tracking-widest uppercase text-meridian-mediumGrey mt-4">
-                  {post.date} • {post.readTime}
-                </div>
-              </div>
-            </div>
+            <BlogGridItem key={idx} post={post} index={idx} />
           ))}
         </div>
       </Section>
@@ -83,7 +107,7 @@ const Blog: React.FC = () => {
           <p className="text-sm text-meridian-charcoal font-light mb-10 tracking-wide">
             Industry insights and collection updates delivered occasionally to your inbox.
           </p>
-          <form className="flex flex-col sm:flex-row gap-4">
+          <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
             <input 
               type="email" 
               placeholder="Email address" 

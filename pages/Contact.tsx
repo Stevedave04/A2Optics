@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
                   <Phone className="w-5 h-5 mt-1 stroke-[1px] text-meridian-gold" />
                   <div>
                     <span className="block text-[10px] tracking-widest uppercase font-medium text-meridian-mediumGrey mb-1">Phone</span>
-                    <a href="tel:+35312345678" className="text-sm font-light hover:text-meridian-gold transition-colors">+353 1 234 5678</a>
+                    <a href="tel:+447703166036" className="text-sm font-light hover:text-meridian-gold transition-colors">+44 (0) 7703 166036</a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-6">

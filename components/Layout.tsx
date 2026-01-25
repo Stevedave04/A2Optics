@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -80,7 +79,7 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <h3 className="font-display text-2xl tracking-widest uppercase font-medium">A<sup>2</sup>OPTICS</h3>
             <p className="text-sm text-meridian-charcoal font-light leading-relaxed max-w-xs opacity-80">
-              Exclusive curator of independent European eyewear for optical professionals across Ireland and Northern Ireland.
+              Exclusive curator of independent eyewear for independent optical practices across the whole of Ireland, North and South.
             </p>
           </div>
           
@@ -100,6 +99,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-meridian-charcoal font-light">
               <li><a href="https://leparcofficial.com/gb/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Le Parc</a></li>
               <li><a href="https://kaleoscollection.com/en_ES/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Kaleos</a></li>
+              <li><a href="https://raen.eu/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Raen</a></li>
               <li><a href="https://www.rolf-spectacles.com/en/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Rolf</a></li>
             </ul>
           </div>
@@ -109,15 +109,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-meridian-charcoal font-light">
               <li className="font-medium text-meridian-warmBlack">Andrew Arbuthnot</li>
               <li><a href="mailto:info@a2optics.com" className="hover:text-meridian-gold transition-colors">info@a2optics.com</a></li>
-              <li>+353 1 234 5678</li>
-              <li className="pt-2 italic">Ireland & Northern Ireland</li>
+              <li>+44 (0) 7703 166036</li>
+              <li className="pt-2 italic">Ireland North & South</li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-meridian-borderGrey/50 gap-6">
           <p className="text-[10px] tracking-widest uppercase text-meridian-mediumGrey">
-            © 2025 A<sup>2</sup>OPTICS Ireland. All rights reserved.
+            © 2025 A<sup>2</sup>OPTICS. All rights reserved.
           </p>
           <div className="flex space-x-8 text-[10px] tracking-widest uppercase text-meridian-mediumGrey">
             <Link to="#" className="hover:text-meridian-warmBlack transition-colors">Privacy Policy</Link>

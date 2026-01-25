@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Handshake, MapPin, Star } from 'lucide-react';
 import Section from '../components/Section';
@@ -7,52 +6,57 @@ import { BRANDS, TESTIMONIALS } from '../constants';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
+  // High-quality luxury eyewear image for fallback
+  const fallbackImageUrl = "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=1920&auto=format&fit=crop";
+
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center">
-      {/* Background Video / Image Container */}
-      <div className="absolute inset-0 z-0 bg-meridian-charcoal">
+    <section className="relative min-h-screen md:h-screen w-full overflow-hidden flex items-center bg-meridian-warmBlack pt-20 pb-32 md:py-0">
+      {/* Background Layer */}
+      <div className="absolute inset-0 z-0">
+        {/* Safety Layer Image: Immediately visible and prevents flicker or black backgrounds */}
+        <img 
+          src={fallbackImageUrl}
+          alt="A2OPTICS Luxury Eyewear Fallback"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 scale-105 transition-opacity duration-1000" 
+        />
+        
+        {/* Background Video with Poster Fallback */}
         <video 
           autoPlay 
           muted 
           loop 
           playsInline
-          className="w-full h-full object-cover opacity-70 transition-opacity duration-1000"
-          poster="https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=1920&auto=format&fit=crop"
+          poster={fallbackImageUrl}
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-opacity duration-1000 scale-105"
         >
-          {/* Using a robust Pexels luxury eyewear video source */}
           <source src="https://videos.pexels.com/video-files/5267023/5267023-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-          {/* Fallback for video - Stunning detail of high-end frames */}
-          <img 
-            src="https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=1920&auto=format&fit=crop" 
-            alt="A2OPTICS Luxury Eyewear Craftsmanship"
-            className="w-full h-full object-cover grayscale" 
-          />
         </video>
         
-        {/* Multilayered readability overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-black/20 backdrop-brightness-[0.8]"></div>
+        {/* Luxury Contrast Overlays */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.5)_100%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+        <div className="absolute inset-0 backdrop-brightness-[0.85] backdrop-contrast-[1.1]"></div>
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl">
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-8 animate-fade-up opacity-0 drop-shadow-2xl">
-            Exceptional Eyewear, <span className="italic font-light">Exclusively</span> for Irish Opticians
+          <h1 className="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[1.1] md:leading-[1.05] mb-8 animate-fade-up opacity-0 drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+            Exceptional Eyewear, <span className="italic font-light text-white/90">Exclusively</span> for Independent Opticians
           </h1>
-          <p className="text-lg md:text-xl text-white/95 font-light max-w-2xl mb-12 animate-fade-up-delay opacity-0 drop-shadow-xl leading-relaxed">
-            A<sup>2</sup>OPTICS: Bridging the gap between Europe's finest independent eyewear houses and the discerning optical professionals of Ireland and Northern Ireland.
+          <p className="text-base md:text-xl text-white/80 font-light max-w-2xl mb-12 animate-fade-up-delay opacity-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] leading-relaxed">
+            A<sup>2</sup>OPTICS: Bridging the gap between the finest independent eyewear houses and discerning optical professionals of Ireland North and South.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 animate-fade-up-delay-more opacity-0">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-up-delay-more opacity-0">
             <Link 
               to="/#collections" 
-              className="bg-white text-meridian-warmBlack px-10 py-4.5 text-[10px] tracking-[0.3em] uppercase font-medium hover:bg-meridian-gold hover:text-white transition-all duration-500 text-center shadow-2xl"
+              className="bg-meridian-gold text-white px-10 py-5 text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-meridian-warmBlack transition-all duration-500 text-center shadow-2xl"
             >
               Explore Collections
             </Link>
             <Link 
               to="/contact" 
-              className="backdrop-blur-md border border-white/40 text-white px-10 py-4.5 text-[10px] tracking-[0.3em] uppercase font-medium hover:bg-white hover:text-meridian-warmBlack transition-all duration-500 text-center shadow-xl"
+              className="backdrop-blur-md border border-white/40 text-white px-10 py-5 text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-meridian-warmBlack transition-all duration-500 text-center shadow-xl"
             >
               Become a Stockist
             </Link>
@@ -60,12 +64,53 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Subtle Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce">
+      {/* Subtle Scroll Indicator - Hidden on mobile to prevent overlap */}
+      <div className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4 animate-bounce z-10">
         <span className="text-[10px] tracking-[0.4em] text-white/60 uppercase font-light vertical-rl">Scroll</span>
         <div className="w-[1px] h-14 bg-gradient-to-b from-white/60 to-transparent"></div>
       </div>
     </section>
+  );
+};
+
+const BrandCard: React.FC<{ brand: any }> = ({ brand }) => {
+  const brandFallback = "https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=800&auto=format&fit=crop";
+  const [imgSrc, setImgSrc] = useState(brand.imageUrl);
+
+  useEffect(() => {
+    setImgSrc(brand.imageUrl);
+  }, [brand.imageUrl]);
+
+  return (
+    <div className="group cursor-pointer">
+      <div className="aspect-square overflow-hidden mb-10 bg-meridian-lightGrey relative">
+        <img 
+          src={imgSrc} 
+          alt={brand.name} 
+          onError={() => setImgSrc(brandFallback)}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="space-y-6">
+        <div className="flex justify-between items-baseline border-b border-meridian-borderGrey pb-4">
+          <h3 className="font-display text-3xl font-light">{brand.name}</h3>
+          <span className="text-[9px] tracking-widest uppercase text-meridian-mediumGrey font-bold">{brand.origin}</span>
+        </div>
+        <p className="font-accent italic text-sm text-meridian-gold tracking-wide">{brand.tagline}</p>
+        <p className="text-sm text-meridian-charcoal font-light leading-relaxed opacity-80">
+          {brand.description}
+        </p>
+        <a 
+          href={brand.catalogueLink} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-[10px] tracking-widest uppercase font-bold group/link text-meridian-warmBlack hover:text-meridian-gold transition-colors"
+        >
+          View Collection 
+          <ArrowRight size={14} className="ml-2 transform transition-transform group-hover/link:translate-x-1.5" />
+        </a>
+      </div>
+    </div>
   );
 };
 
@@ -79,39 +124,7 @@ const Brands: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-20">
         {BRANDS.map((brand) => (
-          <div key={brand.name} className="group cursor-pointer">
-            <div className="aspect-square overflow-hidden mb-10 bg-meridian-lightGrey relative">
-              <img 
-                src={brand.imageUrl} 
-                alt={brand.name} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
-              />
-              <div className="absolute top-6 left-6 flex gap-2">
-                {brand.keywords.slice(0, 1).map(kw => (
-                  <span key={kw} className="bg-white/95 backdrop-blur-sm px-4 py-1.5 text-[9px] tracking-widest uppercase font-bold text-meridian-warmBlack shadow-lg">{kw}</span>
-                ))}
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="flex justify-between items-baseline border-b border-meridian-borderGrey pb-4">
-                <h3 className="font-display text-3xl font-light">{brand.name}</h3>
-                <span className="text-[9px] tracking-widest uppercase text-meridian-mediumGrey font-bold">{brand.origin}</span>
-              </div>
-              <p className="font-accent italic text-sm text-meridian-gold tracking-wide">{brand.tagline}</p>
-              <p className="text-sm text-meridian-charcoal font-light leading-relaxed opacity-80">
-                {brand.description}
-              </p>
-              <a 
-                href={brand.catalogueLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-[10px] tracking-widest uppercase font-bold group/link text-meridian-warmBlack hover:text-meridian-gold transition-colors"
-              >
-                View Collection 
-                <ArrowRight size={14} className="ml-2 transform transition-transform group-hover/link:translate-x-1.5" />
-              </a>
-            </div>
-          </div>
+          <BrandCard key={brand.name} brand={brand} />
         ))}
       </div>
     </Section>
@@ -159,7 +172,7 @@ const About: React.FC = () => {
     <Section id="about">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20 lg:gap-32">
         <ParallaxImage 
-          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop" 
+          src="https://image2url.com/r2/default/images/1769378330861-edd71871-341d-413f-b865-1f68be02c3b7.webp" 
           alt="Andrew Arbuthnot Professional Setting" 
           className="aspect-[4/5] shadow-2xl"
           speed={0.15}
@@ -171,13 +184,16 @@ const About: React.FC = () => {
           </h2>
           <div className="space-y-8 text-base text-meridian-charcoal font-light leading-relaxed opacity-90">
             <p>
-              Founded by Andrew Arbuthnot, A<sup>2</sup>OPTICS bridges the gap between Europe's finest independent eyewear brands and discerning Irish opticians.
+              Founded by Andrew Arbuthnot, A<sup>2</sup>OPTICS bridges the gap between the finest independent eyewear brands and discerning independent opticians in Ireland.
             </p>
             <p>
-              We believe exceptional eyewear deserves exceptional presentation—which is why we work exclusively with optical professionals who share our commitment to quality, craftsmanship, and singular design.
+              We believe exceptional eyewear deserves exceptional presentation—which is why we work exclusively with optical professionals who share our commitment to quality, craftsmanship, and design.
             </p>
             <p>
               Our portfolio is carefully curated to offer diverse, character-filled collections that help your practice stand out in a competitive marketplace.
+            </p>
+            <p>
+              Our collection portfolio is varied in price point from accessible to premium with never a compromise on quality and design.
             </p>
           </div>
           <Link 
@@ -221,8 +237,7 @@ const Testimonials: React.FC = () => {
                 "{t.quote}"
               </blockquote>
               <cite className="not-italic">
-                <span className="block text-[10px] tracking-[0.2em] uppercase font-bold text-meridian-warmBlack">{t.author}</span>
-                <span className="block text-[9px] tracking-[0.2em] uppercase text-meridian-gold mt-2 font-medium">{t.practice}</span>
+                <span className="block text-[10px] tracking-[0.4em] uppercase font-bold text-meridian-warmBlack">{t.author}</span>
               </cite>
             </div>
           ))}
