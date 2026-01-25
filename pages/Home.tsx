@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Handshake, MapPin, Star } from 'lucide-react';
 import Section from '../components/Section';
@@ -6,45 +7,31 @@ import { BRANDS, TESTIMONIALS } from '../constants';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
-  // High-quality luxury eyewear image for fallback
-  const fallbackImageUrl = "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=1920&auto=format&fit=crop";
+  // Reverted to the signature glasses image from Unsplash
+  const heroImageUrl = "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=1920&auto=format&fit=crop";
 
   return (
     <section className="relative min-h-screen md:h-screen w-full overflow-hidden flex items-center bg-meridian-warmBlack pt-20 pb-32 md:py-0">
-      {/* Background Layer */}
       <div className="absolute inset-0 z-0">
-        {/* Safety Layer Image: Immediately visible and prevents flicker or black backgrounds */}
-        <img 
-          src={fallbackImageUrl}
-          alt="A2OPTICS Luxury Eyewear Fallback"
-          className="absolute inset-0 w-full h-full object-cover opacity-40 scale-105 transition-opacity duration-1000" 
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src={heroImageUrl}
+            alt="A2OPTICS Luxury Eyewear Hero"
+            className="absolute inset-0 w-full h-full object-cover opacity-60 animate-ken-burns" 
+          />
+        </div>
         
-        {/* Background Video with Poster Fallback */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          poster={fallbackImageUrl}
-          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-opacity duration-1000 scale-105"
-        >
-          <source src="https://videos.pexels.com/video-files/5267023/5267023-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Luxury Contrast Overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.5)_100%)]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
-        <div className="absolute inset-0 backdrop-brightness-[0.85] backdrop-contrast-[1.1]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/60"></div>
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="max-w-4xl">
-          <h1 className="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[1.1] md:leading-[1.05] mb-8 animate-fade-up opacity-0 drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
-            Exceptional Eyewear, <span className="italic font-light text-white/90">Exclusively</span> for Independent Opticians
+        <div className="max-w-5xl">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-8 animate-fade-up opacity-0 drop-shadow-2xl">
+            Exceptional <span className="italic font-light text-white/90">Eyewear</span>,<br />
+            Exclusively for Independent Opticians
           </h1>
-          <p className="text-base md:text-xl text-white/80 font-light max-w-2xl mb-12 animate-fade-up-delay opacity-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] leading-relaxed">
+          <p className="text-base md:text-xl text-white/80 font-light max-w-2xl mb-12 animate-fade-up-delay opacity-0 leading-relaxed">
             A<sup>2</sup>OPTICS: Bridging the gap between the finest independent eyewear houses and discerning optical professionals of Ireland North and South.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-up-delay-more opacity-0">
@@ -56,7 +43,7 @@ const Hero: React.FC = () => {
             </Link>
             <Link 
               to="/contact" 
-              className="backdrop-blur-md border border-white/40 text-white px-10 py-5 text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-meridian-warmBlack transition-all duration-500 text-center shadow-xl"
+              className="backdrop-blur-md border border-white/40 text-white px-10 py-5 text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-meridian-warmBlack transition-all duration-500 text-center"
             >
               Become a Stockist
             </Link>
@@ -64,11 +51,20 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Subtle Scroll Indicator - Hidden on mobile to prevent overlap */}
       <div className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4 animate-bounce z-10">
         <span className="text-[10px] tracking-[0.4em] text-white/60 uppercase font-light vertical-rl">Scroll</span>
         <div className="w-[1px] h-14 bg-gradient-to-b from-white/60 to-transparent"></div>
       </div>
+
+      <style>{`
+        @keyframes ken-burns {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.15); }
+        }
+        .animate-ken-burns {
+          animation: ken-burns 30s ease-out infinite alternate;
+        }
+      `}</style>
     </section>
   );
 };
@@ -77,18 +73,14 @@ const BrandCard: React.FC<{ brand: any }> = ({ brand }) => {
   const brandFallback = "https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=800&auto=format&fit=crop";
   const [imgSrc, setImgSrc] = useState(brand.imageUrl);
 
-  useEffect(() => {
-    setImgSrc(brand.imageUrl);
-  }, [brand.imageUrl]);
-
   return (
     <div className="group cursor-pointer">
-      <div className="aspect-square overflow-hidden mb-10 bg-meridian-lightGrey relative">
+      <div className="aspect-square overflow-hidden mb-10 bg-meridian-lightGrey relative border border-meridian-borderGrey/20">
         <img 
           src={imgSrc} 
           alt={brand.name} 
           onError={() => setImgSrc(brandFallback)}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
       </div>
       <div className="space-y-6">
@@ -191,9 +183,6 @@ const About: React.FC = () => {
             </p>
             <p>
               Our portfolio is carefully curated to offer diverse, character-filled collections that help your practice stand out in a competitive marketplace.
-            </p>
-            <p>
-              Our collection portfolio is varied in price point from accessible to premium with never a compromise on quality and design.
             </p>
           </div>
           <Link 
