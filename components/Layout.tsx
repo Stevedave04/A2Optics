@@ -118,11 +118,11 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-brand-borderGrey/50 gap-6">
           <p className="text-[10px] tracking-widest uppercase text-brand-mediumGrey">
-            © 2025 a2optics. All rights reserved.
+            © 2026 a2optics. All rights reserved.
           </p>
           <div className="flex space-x-8 text-[10px] tracking-widest uppercase text-brand-mediumGrey">
-            <Link to="#" className="hover:text-brand-warmBlack transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-brand-warmBlack transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:text-brand-warmBlack transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-brand-warmBlack transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
