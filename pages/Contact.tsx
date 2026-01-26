@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const mailtoLink = `mailto:info@a2optics.ie?subject=Enquiry for a2optics from ${formData.practice}&body=Hello Andrew,%0A%0AMy name is ${formData.name} from ${formData.practice} in ${formData.location}.%0A%0AInterest: ${formData.interest}%0A%0AEnquiry Details: ${formData.message.replace(/\n/g, '%0A')}%0A%0AContact: ${formData.phone || 'N/A'}`;
+  const mailtoLink = `mailto:info@a2optics.com?subject=Enquiry for a2optics from ${formData.practice}&body=Hello Andrew,%0A%0AMy name is ${formData.name} from ${formData.practice} in ${formData.location}.%0A%0AInterest: ${formData.interest}%0A%0AEnquiry Details: ${formData.message.replace(/\n/g, '%0A')}%0A%0AContact: ${formData.phone || 'N/A'}`;
 
   return (
     <div className="pt-24 lg:pt-32">
@@ -167,7 +167,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="block text-[10px] tracking-widest uppercase font-medium text-brand-mediumGrey mb-1">Direct Correspondence</span>
-                  <a href="mailto:info@a2optics.ie" className="text-base font-light hover:text-brand-gold transition-colors">info@a2optics.ie</a>
+                  <a href="mailto:info@a2optics.com" className="text-base font-light hover:text-brand-gold transition-colors">info@a2optics.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">

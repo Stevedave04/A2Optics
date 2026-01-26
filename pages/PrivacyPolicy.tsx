@@ -59,7 +59,7 @@ const PrivacyPolicy: React.FC = () => {
 
           <h3>7. Contact Us</h3>
           <p>
-            If you have any questions about this privacy policy, please contact us via email at info@a2optics.ie.
+            If you have any questions about this privacy policy, please contact us via email at info@a2optics.com.
           </p>
         </div>
       </Section>

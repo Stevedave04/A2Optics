@@ -1,3 +1,4 @@
+
 import { Resend } from 'resend';
 import { EmailTemplate } from '../../../components/EmailTemplate';
 import React from 'react';
@@ -30,7 +31,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'a2optics Contact <onboarding@resend.dev>',
-      to: ['info@a2optics.ie'],
+      to: ['info@a2optics.com'],
       replyTo: email,
       subject: `Stockist Enquiry: ${practice}`,
       react: React.createElement(EmailTemplate, { 
