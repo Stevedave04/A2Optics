@@ -4,8 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 const Logo: React.FC<{ isScrolled: boolean; isHome: boolean }> = ({ isScrolled, isHome }) => {
   return (
     <div className="flex items-center gap-3 group">
-      <div className={`font-display text-2xl tracking-[0.25em] uppercase font-medium transition-all duration-500 ${!isScrolled && isHome ? 'text-white' : 'text-meridian-warmBlack'}`}>
-        A<sup>2</sup>OPTICS
+      <div className={`font-display text-2xl tracking-[0.2em] uppercase font-light transition-all duration-500 ${!isScrolled && isHome ? 'text-white' : 'text-brand-warmBlack'}`}>
+        A²<span className="font-medium italic">OPTICS</span>
       </div>
     </div>
   );
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Collections', path: '/#collections' },
     { name: 'About', path: '/#about' },
-    { name: 'Blog', path: '/blog' },
+    { name: 'Journal', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
     ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' 
     : isHome ? 'bg-transparent py-6' : 'bg-white py-6';
 
-  const navLinkColor = !isScrolled && isHome ? 'text-white' : 'text-meridian-warmBlack';
+  const navLinkColor = !isScrolled && isHome ? 'text-white' : 'text-brand-warmBlack';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerStyles}`}>
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-[10px] tracking-[0.3em] uppercase font-medium transition-colors hover:text-meridian-gold ${navLinkColor}`}
+              className={`text-[10px] tracking-[0.3em] uppercase font-medium transition-colors hover:text-brand-gold ${navLinkColor}`}
             >
               {link.name}
             </Link>
@@ -60,8 +60,8 @@ const Header: React.FC = () => {
           to="/contact" 
           className={`hidden lg:block text-[10px] tracking-[0.2em] uppercase font-medium border px-6 py-2.5 transition-all duration-500 ${
             !isScrolled && isHome 
-              ? 'border-white text-white hover:bg-white hover:text-meridian-warmBlack' 
-              : 'border-meridian-warmBlack text-meridian-warmBlack hover:bg-meridian-warmBlack hover:text-white'
+              ? 'border-white text-white hover:bg-white hover:text-brand-warmBlack' 
+              : 'border-brand-warmBlack text-brand-warmBlack hover:bg-brand-warmBlack hover:text-white'
           }`}
         >
           Partner With Us
@@ -73,55 +73,55 @@ const Header: React.FC = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-meridian-offWhite border-t border-meridian-borderGrey pt-24 pb-12">
+    <footer className="bg-brand-offWhite border-t border-brand-borderGrey pt-24 pb-12">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
-            <h3 className="font-display text-2xl tracking-widest uppercase font-medium">A<sup>2</sup>OPTICS</h3>
-            <p className="text-sm text-meridian-charcoal font-light leading-relaxed max-w-xs opacity-80">
-              Exclusive curator of independent eyewear for independent optical practices across the whole of Ireland, North and South.
+            <h3 className="font-display text-2xl tracking-widest uppercase font-light">A²<span className="italic font-medium">OPTICS</span></h3>
+            <p className="text-sm text-brand-charcoal font-light leading-relaxed max-w-xs opacity-80">
+              Exclusive curator of independent European eyewear for the professional optical practices of Ireland.
             </p>
           </div>
           
           <div>
-            <h4 className="text-[10px] tracking-widest uppercase font-bold text-meridian-gold mb-8">Navigation</h4>
-            <ul className="space-y-4 text-sm text-meridian-charcoal font-light">
-              <li><Link to="/" className="hover:text-meridian-gold transition-colors">Home</Link></li>
-              <li><Link to="/#collections" className="hover:text-meridian-gold transition-colors">Collections</Link></li>
-              <li><Link to="/#about" className="hover:text-meridian-gold transition-colors">About</Link></li>
-              <li><Link to="/blog" className="hover:text-meridian-gold transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-meridian-gold transition-colors">Contact</Link></li>
+            <h4 className="text-[10px] tracking-widest uppercase font-bold text-brand-gold mb-8">Navigation</h4>
+            <ul className="space-y-4 text-sm text-brand-charcoal font-light">
+              <li><Link to="/" className="hover:text-brand-gold transition-colors">Home</Link></li>
+              <li><Link to="/#collections" className="hover:text-brand-gold transition-colors">Collections</Link></li>
+              <li><Link to="/#about" className="hover:text-brand-gold transition-colors">About</Link></li>
+              <li><Link to="/blog" className="hover:text-brand-gold transition-colors">Journal</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-gold transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-[10px] tracking-widest uppercase font-bold text-meridian-gold mb-8">Our Brands</h4>
-            <ul className="space-y-4 text-sm text-meridian-charcoal font-light">
-              <li><a href="https://leparcofficial.com/gb/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Le Parc</a></li>
-              <li><a href="https://kaleoscollection.com/en_ES/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Kaleos</a></li>
-              <li><a href="https://raen.eu/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Raen</a></li>
-              <li><a href="https://www.rolf-spectacles.com/en/" target="_blank" rel="noopener noreferrer" className="hover:text-meridian-gold transition-colors">Rolf</a></li>
+            <h4 className="text-[10px] tracking-widest uppercase font-bold text-brand-gold mb-8">Our Brands</h4>
+            <ul className="space-y-4 text-sm text-brand-charcoal font-light">
+              <li><a href="https://leparcofficial.com/gb/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Le Parc</a></li>
+              <li><a href="https://kaleoscollection.com/en_ES/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Kaleos</a></li>
+              <li><a href="https://raen.eu/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Raen</a></li>
+              <li><a href="https://www.rolf-spectacles.com/en/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Rolf</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-[10px] tracking-widest uppercase font-bold text-meridian-gold mb-8">Contact</h4>
-            <ul className="space-y-4 text-sm text-meridian-charcoal font-light">
-              <li className="font-medium text-meridian-warmBlack">Andrew Arbuthnot</li>
-              <li><a href="mailto:info@a2optics.com" className="hover:text-meridian-gold transition-colors">info@a2optics.com</a></li>
+            <h4 className="text-[10px] tracking-widest uppercase font-bold text-brand-gold mb-8">Contact</h4>
+            <ul className="space-y-4 text-sm text-brand-charcoal font-light">
+              <li className="font-medium text-brand-warmBlack">Andrew Arbuthnot</li>
+              <li><a href="mailto:info@a2optics.com" className="hover:text-brand-gold transition-colors">info@a2optics.com</a></li>
               <li>+44 (0) 7703 166036</li>
               <li className="pt-2 italic">Ireland North & South</li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-meridian-borderGrey/50 gap-6">
-          <p className="text-[10px] tracking-widest uppercase text-meridian-mediumGrey">
-            © 2025 A<sup>2</sup>OPTICS. All rights reserved.
+        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-brand-borderGrey/50 gap-6">
+          <p className="text-[10px] tracking-widest uppercase text-brand-mediumGrey">
+            © 2025 A²OPTICS. All rights reserved.
           </p>
-          <div className="flex space-x-8 text-[10px] tracking-widest uppercase text-meridian-mediumGrey">
-            <Link to="#" className="hover:text-meridian-warmBlack transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-meridian-warmBlack transition-colors">Terms of Service</Link>
+          <div className="flex space-x-8 text-[10px] tracking-widest uppercase text-brand-mediumGrey">
+            <Link to="#" className="hover:text-brand-warmBlack transition-colors">Privacy Policy</Link>
+            <Link to="#" className="hover:text-brand-warmBlack transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col selection:bg-meridian-gold selection:text-white">
+    <div className="min-h-screen flex flex-col selection:bg-brand-gold selection:text-white">
       <Header />
       <main className="flex-grow">
         {children}
