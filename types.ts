@@ -18,6 +18,7 @@ export interface Post {
   date: string;
   readTime: string;
   imageUrl: string;
+  content: string[]; // Array of paragraphs for easier rendering
 }
 
 export interface Testimonial {
