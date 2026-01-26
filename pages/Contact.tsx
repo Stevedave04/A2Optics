@@ -68,7 +68,8 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                {state.errors && state.errors.length > 0 && (
+                {/* Fixed: Removed .length check on SubmissionError object */}
+                {state.errors && (
                   <div className="p-8 bg-white border border-brand-borderGrey text-brand-charcoal text-[11px] leading-relaxed animate-in slide-in-from-top-4 duration-500 mb-8 shadow-sm">
                     <div className="flex items-start gap-5">
                       <div className="bg-brand-gold/10 p-2 rounded-full shrink-0">
