@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Section from '../components/Section';
 import { Mail, Phone, MapPin, Loader2, CheckCircle2, AlertCircle, ExternalLink, Copy, Check, Send } from 'lucide-react';
@@ -68,8 +69,7 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Fixed: Removed .length check on SubmissionError object */}
-                {state.errors && (
+                {state.errors && Object.keys(state.errors).length > 0 && (
                   <div className="p-8 bg-white border border-brand-borderGrey text-brand-charcoal text-[11px] leading-relaxed animate-in slide-in-from-top-4 duration-500 mb-8 shadow-sm">
                     <div className="flex items-start gap-5">
                       <div className="bg-brand-gold/10 p-2 rounded-full shrink-0">

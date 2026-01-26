@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Handshake, MapPin, Compass } from 'lucide-react';
 import Section from '../components/Section';

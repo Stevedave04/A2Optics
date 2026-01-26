@@ -1,6 +1,6 @@
 {
   "name": "a2optics-worker",
-  "main": "./src/index.ts",
+  "main": "./index.tsx",
   "compatibility_date": "2025-01-26",
   "build": {
     "command": "npm run build"

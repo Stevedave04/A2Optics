@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -5,7 +6,7 @@ const Logo: React.FC<{ isScrolled: boolean; isHome: boolean }> = ({ isScrolled, 
   return (
     <div className="flex items-center gap-3 group">
       <div className={`font-display text-2xl tracking-[0.2em] uppercase font-light transition-all duration-500 ${!isScrolled && isHome ? 'text-white' : 'text-brand-warmBlack'}`}>
-        A2<span className="font-medium italic">OPTICS</span>
+        a2<span className="font-medium italic">optics</span>
       </div>
     </div>
   );
@@ -77,7 +78,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
-            <h3 className="font-display text-2xl tracking-widest uppercase font-light">A2<span className="italic font-medium">OPTICS</span></h3>
+            <h3 className="font-display text-2xl tracking-widest uppercase font-light">a2<span className="italic font-medium">optics</span></h3>
             <p className="text-sm text-brand-charcoal font-light leading-relaxed max-w-xs opacity-80">
               Exclusive curator of independent European eyewear for the professional optical practices of Ireland.
             </p>
