@@ -21,8 +21,8 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'A²OPTICS Contact <onboarding@resend.dev>',
-      to: ['info@a2optics.com'], 
+      from: 'a2optics Contact <onboarding@resend.dev>',
+      to: ['info@a2optics.ie'], 
       replyTo: email,
       subject: `Stockist Enquiry: ${practice}`,
       react: React.createElement(EmailTemplate, { 

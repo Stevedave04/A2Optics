@@ -42,7 +42,7 @@ export const BRANDS: Brand[] = [
 export const POSTS: Post[] = [
   {
     id: '1',
-    category: 'A² Perspectives',
+    category: 'a2optics Perspectives',
     title: 'Tirol’s Finest: The Alpine Philosophy of Sustainable Luxury',
     excerpt: 'How a small workshop in the Austrian Alps is leading the global shift toward plant-based eyewear without compromising on aesthetic high-performance.',
     author: 'Andrew Arbuthnot',
@@ -74,7 +74,7 @@ export const POSTS: Post[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: "A²OPTICS has transformed our premium eyewear offering. The brands they represent are exactly what our discerning clients are looking for.",
+    quote: "a2optics has transformed our premium eyewear offering. The brands they represent are exactly what our discerning clients are looking for.",
     author: "J.O.",
     practice: "Independent Optician, Dublin"
   },

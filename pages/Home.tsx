@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 overflow-hidden">
           <img 
             src={heroImageUrl}
-            alt="A²OPTICS Luxury Eyewear Hero"
+            alt="a2optics Luxury Eyewear Hero"
             className="absolute inset-0 w-full h-full object-cover opacity-60 animate-ken-burns" 
           />
         </div>
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             Exceptional Eyewear, <br /><span className="italic font-light text-white/90">Exclusively</span> for Independent Opticians
           </h1>
           <p className="text-base md:text-xl text-white/80 font-light max-w-2xl mb-12 animate-fade-up-delay-more opacity-0 leading-relaxed">
-            A²OPTICS: Bridging the gap between the finest independent eyewear houses and discerning optical professionals of Ireland North and South.
+            a2optics: Bridging the gap between the finest independent eyewear houses and discerning optical professionals of Ireland North and South.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-up-delay-more opacity-0">
             <Link 
@@ -163,7 +163,7 @@ const About: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20 lg:gap-32">
         <ParallaxImage 
           src="https://image2url.com/r2/default/images/1769378330861-edd71871-341d-413f-b865-1f68be02c3b7.webp" 
-          alt="Andrew Arbuthnot • A²OPTICS" 
+          alt="Andrew Arbuthnot • a2optics" 
           className="aspect-[4/5] shadow-2xl"
           speed={0.15}
         />
@@ -174,7 +174,7 @@ const About: React.FC = () => {
           </h2>
           <div className="space-y-8 text-base text-brand-charcoal font-light leading-relaxed opacity-90">
             <p>
-              Founded by Andrew Arbuthnot, A²OPTICS was born from a simple observation: Ireland’s finest independent opticians deserve access to Europe’s most distinctive eyewear houses.
+              Founded by Andrew Arbuthnot, a2optics was born from a simple observation: Ireland’s finest independent opticians deserve access to Europe’s most distinctive eyewear houses.
             </p>
             <p>
               We act as the premier distributor for boutique brands, bringing the artisanal precision of Austrian workshops and the avant-garde spirit of Barcelona studios directly to your clinical practice.

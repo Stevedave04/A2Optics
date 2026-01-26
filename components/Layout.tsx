@@ -5,7 +5,7 @@ const Logo: React.FC<{ isScrolled: boolean; isHome: boolean }> = ({ isScrolled, 
   return (
     <div className="flex items-center gap-3 group">
       <div className={`font-display text-2xl tracking-[0.2em] uppercase font-light transition-all duration-500 ${!isScrolled && isHome ? 'text-white' : 'text-brand-warmBlack'}`}>
-        A²<span className="font-medium italic">OPTICS</span>
+        A2<span className="font-medium italic">OPTICS</span>
       </div>
     </div>
   );
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
-            <h3 className="font-display text-2xl tracking-widest uppercase font-light">A²<span className="italic font-medium">OPTICS</span></h3>
+            <h3 className="font-display text-2xl tracking-widest uppercase font-light">A2<span className="italic font-medium">OPTICS</span></h3>
             <p className="text-sm text-brand-charcoal font-light leading-relaxed max-w-xs opacity-80">
               Exclusive curator of independent European eyewear for the professional optical practices of Ireland.
             </p>
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
             <h4 className="text-[10px] tracking-widest uppercase font-bold text-brand-gold mb-8">Contact</h4>
             <ul className="space-y-4 text-sm text-brand-charcoal font-light">
               <li className="font-medium text-brand-warmBlack">Andrew Arbuthnot</li>
-              <li><a href="mailto:info@a2optics.com" className="hover:text-brand-gold transition-colors">info@a2optics.com</a></li>
+              <li><a href="mailto:info@a2optics.ie" className="hover:text-brand-gold transition-colors">info@a2optics.ie</a></li>
               <li>+44 (0) 7703 166036</li>
               <li className="pt-2 italic">Ireland North & South</li>
             </ul>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-brand-borderGrey/50 gap-6">
           <p className="text-[10px] tracking-widest uppercase text-brand-mediumGrey">
-            © 2025 A²OPTICS. All rights reserved.
+            © 2025 a2optics. All rights reserved.
           </p>
           <div className="flex space-x-8 text-[10px] tracking-widest uppercase text-brand-mediumGrey">
             <Link to="#" className="hover:text-brand-warmBlack transition-colors">Privacy Policy</Link>

@@ -21,7 +21,7 @@ export const EmailTemplate = ({
 }: EmailTemplateProps) => {
   return (
     <div style={{ fontFamily: 'sans-serif', color: '#1A1A1A', padding: '20px' }}>
-      <h1 style={{ color: '#B8A078', borderBottom: '1px solid #D4D2CF', paddingBottom: '10px' }}>New Enquiry: A²OPTICS</h1>
+      <h1 style={{ color: '#B8A078', borderBottom: '1px solid #D4D2CF', paddingBottom: '10px' }}>New Enquiry: a2optics</h1>
       
       <div style={{ marginTop: '20px' }}>
         <p><strong>From:</strong> {name}</p>
@@ -38,7 +38,7 @@ export const EmailTemplate = ({
       </div>
 
       <p style={{ marginTop: '40px', fontSize: '12px', color: '#9A9A9A' }}>
-        This message was sent from the A²OPTICS contact form.
+        This message was sent from the a2optics contact form.
       </p>
     </div>
   );

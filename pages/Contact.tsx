@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const mailtoLink = `mailto:info@a2optics.com?subject=Enquiry for A²OPTICS from ${formData.practice}&body=Hello Andrew,%0A%0AMy name is ${formData.name} from ${formData.practice} in ${formData.location}.%0A%0AInterest: ${formData.interest}%0A%0AEnquiry Details: ${formData.message.replace(/\n/g, '%0A')}%0A%0AContact: ${formData.phone || 'N/A'}`;
+  const mailtoLink = `mailto:info@a2optics.ie?subject=Enquiry for a2optics from ${formData.practice}&body=Hello Andrew,%0A%0AMy name is ${formData.name} from ${formData.practice} in ${formData.location}.%0A%0AInterest: ${formData.interest}%0A%0AEnquiry Details: ${formData.message.replace(/\n/g, '%0A')}%0A%0AContact: ${formData.phone || 'N/A'}`;
 
   return (
     <div className="pt-24 lg:pt-32">
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                 <div className="space-y-4">
                   <h3 className="font-display text-4xl font-light">Enquiry Received</h3>
                   <p className="text-sm text-brand-charcoal opacity-70 leading-relaxed">
-                    Thank you. Your details have been transmitted directly to Andrew at A²OPTICS. We aim to respond within 24 hours.
+                    Thank you. Your details have been transmitted directly to Andrew at a2optics. We aim to respond within 24 hours.
                   </p>
                 </div>
 
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="space-y-12 lg:pl-10">
-            <h3 className="font-display text-3xl font-light">A² Access</h3>
+            <h3 className="font-display text-3xl font-light">a2optics Access</h3>
             <div className="space-y-8">
               <div className="flex items-start gap-6 group">
                 <div className="w-12 h-12 border border-brand-borderGrey flex items-center justify-center shrink-0 group-hover:border-brand-gold transition-colors">
@@ -166,7 +166,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="block text-[10px] tracking-widest uppercase font-medium text-brand-mediumGrey mb-1">Direct Correspondence</span>
-                  <a href="mailto:info@a2optics.com" className="text-base font-light hover:text-brand-gold transition-colors">info@a2optics.com</a>
+                  <a href="mailto:info@a2optics.ie" className="text-base font-light hover:text-brand-gold transition-colors">info@a2optics.ie</a>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">

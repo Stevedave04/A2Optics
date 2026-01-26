@@ -128,7 +128,7 @@ const Blog: React.FC = () => {
     <div className="pt-24 lg:pt-32">
       <Section id="blog-hero" className="pb-0!">
         <div className="max-w-4xl mb-16">
-          <span className="text-xs tracking-extrawide uppercase font-bold text-brand-gold block mb-6">The A² Journal</span>
+          <span className="text-xs tracking-extrawide uppercase font-bold text-brand-gold block mb-6">The a2optics Journal</span>
           <h1 className="font-display text-5xl md:text-7xl font-light leading-tight mb-8">Reflections on <span className="italic">Provenance</span> and Design</h1>
           <p className="text-lg text-brand-charcoal font-light leading-relaxed max-w-2xl">
             A collection of industry insights, artisan spotlights, and strategic perspectives curated specifically for the independent optical professional.
@@ -191,7 +191,7 @@ const Blog: React.FC = () => {
       <section className="bg-brand-warmBlack py-32 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-brand-gold opacity-50"></div>
         <div className="container mx-auto px-6 max-w-3xl text-center relative z-10">
-          <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-brand-gold mb-8 block">A² Correspondence</span>
+          <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-brand-gold mb-8 block">a2optics Correspondence</span>
           <h2 className="font-display text-4xl md:text-5xl font-light mb-6 text-white italic">Curated Industry Intelligence</h2>
           <p className="text-sm text-white/60 font-light mb-12 tracking-wide leading-relaxed">
             Join a select group of independent optical professionals who receive our quarterly insights into European design trends and strategic retail curation.
