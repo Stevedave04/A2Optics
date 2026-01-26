@@ -191,13 +191,17 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="bg-brand-warmBlack p-8 text-white mt-12 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-gold/10 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+              <img 
+                src="https://image2url.com/r2/default/images/1769432749113-220bc9f3-7fa1-4863-876f-af8264ebd2b8.png" 
+                alt="a2optics watermark" 
+                className="absolute -top-8 -right-8 w-40 h-40 object-contain opacity-5 rotate-12 pointer-events-none" 
+              />
               <h4 className="text-[10px] tracking-[0.3em] uppercase font-bold text-brand-gold mb-4 italic">Independent Heritage</h4>
-              <p className="text-sm text-white/70 font-light leading-relaxed mb-6">
+              <p className="text-sm text-white/70 font-light leading-relaxed mb-6 relative z-10">
                 Independent practices deserve an independent partner. We understand the specific clinical and commercial pressures of the Irish optical market.
               </p>
-              <div className="h-[1px] bg-white/10 w-full mb-6"></div>
-              <p className="text-[10px] tracking-widest uppercase font-bold">Andrew Arbuthnot • Director</p>
+              <div className="h-[1px] bg-white/10 w-full mb-6 relative z-10"></div>
+              <p className="text-[10px] tracking-widest uppercase font-bold relative z-10">Andrew Arbuthnot • Director</p>
             </div>
           </div>
         </div>

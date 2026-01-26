@@ -137,7 +137,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
-            <h3 className="font-display text-2xl tracking-widest uppercase font-light">a2<span className="italic font-medium">optics</span></h3>
+            <div className="flex items-center gap-4">
+              <img src="https://image2url.com/r2/default/images/1769432749113-220bc9f3-7fa1-4863-876f-af8264ebd2b8.png" alt="a2optics Mark" className="w-12 h-12 object-contain opacity-90" />
+              <h3 className="font-display text-2xl tracking-widest uppercase font-light">a2<span className="italic font-medium">optics</span></h3>
+            </div>
             <p className="text-sm text-brand-charcoal font-light leading-relaxed max-w-xs opacity-80">
               Exclusive curator of independent European eyewear for the professional optical practices of Ireland.
             </p>
