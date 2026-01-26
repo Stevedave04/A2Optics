@@ -1,0 +1,11 @@
+{
+  "name": "a2optics-worker",
+  "main": "./src/index.ts",
+  "compatibility_date": "2025-01-26",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./dist"
+  }
+}
