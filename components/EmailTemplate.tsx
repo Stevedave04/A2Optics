@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 
 interface EmailTemplateProps {
@@ -11,8 +10,6 @@ interface EmailTemplateProps {
   message: string;
 }
 
-// Fixed: Removed React.FC to prevent the return type from being inferred as Promise<ReactNode>
-// in environments supporting React Server Components, which conflicts with Resend's expected types.
 export const EmailTemplate = ({ 
   name, 
   practice, 

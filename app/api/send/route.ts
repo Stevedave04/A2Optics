@@ -1,14 +1,11 @@
-
 import { Resend } from 'resend';
 import { EmailTemplate } from '../../../components/EmailTemplate';
 import React from 'react';
 
 /**
  * Server-side API route for Resend (App Router).
- * Key provided: re_E8ih5jh5_Az8j3cKUFJkeGMJygjyZZJEm
  */
 
-// Prefer environment variable for security, fallback to provided key if necessary
 const RESEND_KEY = process.env.RESEND_API_KEY || 're_E8ih5jh5_Az8j3cKUFJkeGMJygjyZZJEm';
 const resend = new Resend(RESEND_KEY);
 
@@ -32,7 +29,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'A2OPTICS Contact <onboarding@resend.dev>',
+      from: 'A²OPTICS Contact <onboarding@resend.dev>',
       to: ['info@a2optics.com'],
       replyTo: email,
       subject: `Stockist Enquiry: ${practice}`,

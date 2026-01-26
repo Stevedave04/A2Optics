@@ -11,7 +11,10 @@ const eyewearFallbacks = [
   "https://images.unsplash.com/photo-1591076482161-421a3aaee5f7?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1511499767390-a8a197599624?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1556306535-38febf6782e7?q=80&w=800&auto=format&fit=crop"
+  "https://images.unsplash.com/photo-1556306535-38febf6782e7?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1509100104034-476ce85a91ee?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop"
 ];
 
 const placeholderJournalTopics = [
@@ -39,15 +42,35 @@ const placeholderJournalTopics = [
     title: "Finding the Perfect Fit: A Guide to Facial Anatomy",
     excerpt: "Strategic advice for opticians on pairing unique bridge designs with distinctive facial structures.",
     category: "Practice Tips"
+  },
+  {
+    title: "The Mediterranean Light: Designing for Barcelona",
+    excerpt: "How the unique quality of coastal Spanish light informs the color palettes of independent design houses.",
+    category: "Design Trends"
+  },
+  {
+    title: "Heritage Reimagined: The 1960s Influence in 2025",
+    excerpt: "A deep dive into how mid-century silhouettes are being updated for the modern clinical practice.",
+    category: "Trends"
+  },
+  {
+    title: "The Future of Austrian Craftsmanship",
+    excerpt: "Exploring the legendary workshops of Tirol and their uncompromising approach to wood and stone.",
+    category: "Provenance"
   }
 ];
 
 const BlogGridItem: React.FC<{ post: Post; index: number }> = ({ post, index }) => {
   const isPlaceholder = post.id.startsWith('placeholder');
-  const displayTitle = !isPlaceholder ? post.title : placeholderJournalTopics[index % placeholderJournalTopics.length].title;
-  const displayExcerpt = !isPlaceholder ? post.excerpt : placeholderJournalTopics[index % placeholderJournalTopics.length].excerpt;
-  const displayCategory = !isPlaceholder ? post.category : placeholderJournalTopics[index % placeholderJournalTopics.length].category;
   
+  // Dynamically select varied content based on index for placeholders
+  const topic = placeholderJournalTopics[index % placeholderJournalTopics.length];
+  
+  const displayTitle = !isPlaceholder ? post.title : topic.title;
+  const displayExcerpt = !isPlaceholder ? post.excerpt : topic.excerpt;
+  const displayCategory = !isPlaceholder ? post.category : topic.category;
+  
+  // Use a unique image from the fallback array based on index
   const fallback = eyewearFallbacks[index % eyewearFallbacks.length];
   const [imgSrc, setImgSrc] = useState(post.imageUrl || fallback);
 
@@ -90,7 +113,8 @@ const Blog: React.FC = () => {
     const realPosts = POSTS.slice(1);
     const gridItems: Partial<Post>[] = [...realPosts];
     
-    while (gridItems.length < 6) {
+    // Fill up to 9 items for a robust grid look
+    while (gridItems.length < 9) {
       gridItems.push({
         id: `placeholder-${gridItems.length}`,
         date: 'March 2025',

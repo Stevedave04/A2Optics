@@ -1,4 +1,3 @@
-
 import { Resend } from 'resend';
 import { EmailTemplate } from '../components/EmailTemplate';
 import React from 'react';
@@ -21,10 +20,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Fixed: Use React.createElement instead of calling the component as a function.
-    // This is the standard way to use components in .ts (non-JSX) files.
     const { data, error } = await resend.emails.send({
-      from: 'A2OPTICS Contact <onboarding@resend.dev>',
+      from: 'A²OPTICS Contact <onboarding@resend.dev>',
       to: ['info@a2optics.com'], 
       replyTo: email,
       subject: `Stockist Enquiry: ${practice}`,

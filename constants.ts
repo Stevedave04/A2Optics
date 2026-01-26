@@ -1,4 +1,3 @@
-
 import { Brand, Post, Testimonial } from './types';
 
 export const BRANDS: Brand[] = [

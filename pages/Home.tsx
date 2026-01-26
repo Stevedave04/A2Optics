@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             Exceptional Eyewear, <br /><span className="italic font-light text-white/90">Exclusively</span> for Independent Opticians
           </h1>
           <p className="text-base md:text-xl text-white/80 font-light max-w-2xl mb-12 animate-fade-up-delay-more opacity-0 leading-relaxed">
-            A2OPTICS: Bridging the gap between the finest independent eyewear houses and discerning optical professionals of Ireland North and South.
+            A²OPTICS: Bridging the gap between the finest independent eyewear houses and discerning optical professionals of Ireland North and South.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-up-delay-more opacity-0">
             <Link 
