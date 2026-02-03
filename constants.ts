@@ -42,6 +42,22 @@ export const BRANDS: Brand[] = [
 
 export const POSTS: Post[] = [
   {
+    id: '5',
+    category: 'Future Trends',
+    title: 'The Tactile Renaissance: Why Texture Matters in 2026',
+    excerpt: 'As we move further into the digital age, the human desire for physical connection manifests in eyewear through bold sculpting, raw materials, and intricate surface detailing.',
+    author: 'Andrew Arbuthnot',
+    date: 'January 2026',
+    readTime: '5 min read',
+    imageUrl: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1200&auto=format&fit=crop',
+    content: [
+      "In 2026, we are witnessing a profound shift in consumer values. After years of minimalism and 'quiet luxury', there is a resurgence of the tactile. Patients are no longer satisfied with eyewear that simply looks good in a 2D image on a screen; they crave frames that offer a rich sensory experience when held in the hand.",
+      "This year, our partner brands are responding with collections that emphasize volume and surface treatment. We are seeing a move away from flat sheets of acetate toward heavily sculpted, three-dimensional forms. Brands like Le Parc are pushing the boundaries of milling technology to create bevels that catch the light in unexpected ways, turning the frame into a piece of wearable architecture.",
+      "This return to tactile luxury provides a distinct advantage for the brick-and-mortar independent practice. You cannot feel the weight of quality, the warmth of hand-polished zyl, or the texture of a raw wood finish through a website. This physical interaction is the independent optician's superpower.",
+      "As we curate our selection for the year ahead, we are prioritizing collections that invite touch. Whether it is the stone finishes from Rolf or the bold, chamfered edges of the latest Kaleos drop, the focus is on the substantial. It is eyewear that feels as expensive as it looks, grounding the wearer in the physical world."
+    ]
+  },
+  {
     id: '1',
     category: 'a2optics Perspectives',
     title: 'Tirol’s Finest: The Alpine Philosophy of Sustainable Luxury',
