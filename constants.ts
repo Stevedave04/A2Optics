@@ -37,6 +37,15 @@ export const BRANDS: Brand[] = [
     catalogueLink: 'https://raen.eu/',
     imageUrl: 'https://image2url.com/r2/default/images/1769356550077-3c94a321-c0f5-4c38-8449-0b6b121d0fce.png',
     keywords: ['Modern Classic', 'Handcrafted', 'Coastal']
+  },
+  {
+    name: 'Eye Club Optical',
+    origin: 'London, UK',
+    tagline: 'Stylish and high-quality glasses',
+    description: 'Explore our wide range of stylish and high-quality glasses, sunglasses, and prescription lenses. Enjoy exceptional customer service and find the perfect eye wear that suits your style and needs.',
+    catalogueLink: 'https://www.eye-club.co.uk/collections/eye-club-optical',
+    imageUrl: 'https://www.eye-club.co.uk/cdn/shop/collections/eye-club-collection-optical-01.jpg',
+    keywords: ['Stylish', 'High-quality', 'Contemporary']
   }
 ];
 
